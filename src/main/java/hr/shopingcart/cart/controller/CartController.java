@@ -50,5 +50,4 @@ public class CartController {
     public ResponseEntity<CartItemStatistics> getItemsStatistics(){
         return ResponseEntity.ok(cartService.calculateItemsStatistic());
     }
-
 }
