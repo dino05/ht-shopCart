@@ -21,3 +21,10 @@ spring:
         format_sql: true
         ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+      tagsSorter: alpha
+      operationsSorter: alpha
+    api-docs:
+      enabled: true
