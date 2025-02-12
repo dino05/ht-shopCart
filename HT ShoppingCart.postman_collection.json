@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "26896e28-87ca-4a29-ac9b-961555db79e7",
+		"name": "HT ShoppingCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8035628"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cart",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemsStatistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/cart/statistic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cart",
+						"statistic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCart ADD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartItems\": [\n        {\n            \"quantity\": 1,\n            \"createDate\": \"2023-10-02\",\n            \"actionType\": \"ADD\",\n            \"offerId\": 2222,\n            \"itemPrice\": [\n                {\n                    \"price\": 29.99,\n                    \"priceType\": \"RECURRING\",\n                    \"recurrences\": 12\n                }\n            ]\n        },\n        {\n            \"quantity\": 2,\n            \"createDate\": \"2023-10-01\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 1111,\n            \"itemPrice\": [\n                {\n                    \"price\": 19.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 0\n                },\n                {\n                    \"price\": 15.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 0\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cart/update-cart/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cart",
+						"update-cart",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCart MODIFY",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartItems\": [\n        {\n            \"id\": 18,\n            \"quantity\": 1,\n            \"createDate\": \"2023-10-02\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 1111,\n            \"itemPrice\": [\n                {\n                    \"id\": 19,\n                    \"price\": 29.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 100\n                }\n            ]\n        },\n        {\n            \"id\": 17,\n            \"quantity\": 2,\n            \"createDate\": \"2023-10-01\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 3333,\n            \"itemPrice\": [\n                {\n                    \"id\": 17,\n                    \"price\": 19.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 0\n                },\n                {\n                    \"id\": 18,\n                    \"price\": 15.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 200\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cart/update-cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cart",
+						"update-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCart DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 11,\n    \"cartItems\": [\n        {\n            \"id\": 18,\n            \"quantity\": 1,\n            \"createDate\": \"2023-10-02\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 2222,\n            \"itemPrice\": [\n                {\n                    \"id\": 19,\n                    \"price\": 29.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 12\n                }\n            ]\n        },\n        {\n            \"id\": 17,\n            \"quantity\": 2,\n            \"createDate\": \"2023-10-01\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 1111,\n            \"itemPrice\": [\n                {\n                    \"id\": 17,\n                    \"price\": 19.99,\n                    \"priceType\": \"RECURRING\",\n                    \"recurrences\": 0\n                },\n                {\n                    \"id\": 18,\n                    \"price\": 15.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 0\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cart/update-cart/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cart",
+						"update-cart",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "evictCart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 11,\n    \"cartItems\": [\n        {\n            \"id\": 18,\n            \"quantity\": 1,\n            \"createDate\": \"2023-10-02\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 2222,\n            \"itemPrice\": [\n                {\n                    \"id\": 19,\n                    \"price\": 29.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 12\n                }\n            ]\n        },\n        {\n            \"id\": 17,\n            \"quantity\": 2,\n            \"createDate\": \"2023-10-01\",\n            \"actionType\": \"MODIFY\",\n            \"offerId\": 1111,\n            \"itemPrice\": [\n                {\n                    \"id\": 17,\n                    \"price\": 19.99,\n                    \"priceType\": \"RECURRING\",\n                    \"recurrences\": 0\n                },\n                {\n                    \"id\": 18,\n                    \"price\": 15.99,\n                    \"priceType\": \"UPFRONT\",\n                    \"recurrences\": 0\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cart/11/evict",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cart",
+						"11",
+						"evict"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
